@@ -12,7 +12,7 @@ export async function swapBars(index1, index2, array) {
   bars[index1].style.transform = `translate( ${translateBar2.x}px, 0% )`;
   bars[index2].style.transform = `translate( ${translateBar1.x}px, 0% )`;
 
-  //swap arr element in array
+  // Swap array elements in the array
   swapArrElm(array, index1, index2);
 }
 
@@ -39,13 +39,13 @@ function getTranslateValues(element) {
     };
   }
 
-  // Can either be 2d or 3d transform
+  // Can either be 2D or 3D transform
   const matrixType = matrix.includes("3d") ? "3d" : "2d";
   const matrixValues = matrix.match(/matrix.*\((.+)\)/)[1].split(", ");
 
-  // 2d matrices have 6 values
+  // 2D matrices have 6 values
   // Last 2 values are X and Y.
-  // 2d matrices does not have Z value.
+  // 2D matrices do not have Z value.
   if (matrixType === "2d") {
     return {
       x: matrixValues[4],
@@ -54,7 +54,7 @@ function getTranslateValues(element) {
     };
   }
 
-  // 3d matrices have 16 values
+  // 3D matrices have 16 values
   // The 13th, 14th, and 15th values are X, Y, and Z
   if (matrixType === "3d") {
     return {
@@ -64,6 +64,7 @@ function getTranslateValues(element) {
     };
   }
 }
+
 function swapArrElm(arr, indexA, indexB) {
   var temp = arr[indexA];
   arr[indexA] = arr[indexB];

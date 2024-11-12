@@ -116,23 +116,23 @@ function checkPseudoAnim(data, arrFromNodeList) {
     ".pseudo-code-container .checking"
   );
   if (data.isSetCurr) {
-    pseudoCheckingElm.textContent = `Set nilai ${
+    pseudoCheckingElm.textContent = `Set value ${
       arrFromNodeList[data.currElm].textContent
-    } sebagai current`;
+    } as current`;
   }
   if (data.isCompare) {
-    pseudoCheckingElm.textContent = `Cek apakah nilai ${
+    pseudoCheckingElm.textContent = `Check if value ${
       arrFromNodeList[data.compareElm].textContent
     } < ${
       arrFromNodeList[data.currElm].textContent
-    },  jika iya maka lakukan looping sampai menemukan data yang lebih kecil dari current`;
+    }, if yes then loop until a value smaller than current is found`;
   }
   if (data.isSwap) {
-    pseudoCheckingElm.textContent = `tukar nilai ${
+    pseudoCheckingElm.textContent = `Swap values ${
       arrFromNodeList[data.compareElm].textContent
-    } dan ${arrFromNodeList[data.currElm].textContent}`;
+    } and ${arrFromNodeList[data.currElm].textContent}`;
   }
   if (data.currElm == 0 && data.compareElm == 0) {
-    pseudoCheckingElm.textContent = `Set nilai pertama sebagai sorted`;
+    pseudoCheckingElm.textContent = `Set the first value as sorted`;
   }
 }

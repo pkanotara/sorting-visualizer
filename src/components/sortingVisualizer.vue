@@ -144,11 +144,11 @@ export default {
         this.selectedAlgorithm = "bubble";
       }
 
-      if (data.selectedSpeed == "Lambat") {
+      if (data.selectedSpeed == "Slow") {
         this.animationTime = 1000;
-      } else if (data.selectedSpeed == "Sedang") {
+      } else if (data.selectedSpeed == "Medium") {
         this.animationTime = 500;
-      } else if (data.selectedSpeed == "Cepat") {
+      } else if (data.selectedSpeed == "Fast") {
         this.animationTime = 200;
       }
     },

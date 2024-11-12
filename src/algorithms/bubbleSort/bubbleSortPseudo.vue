@@ -1,18 +1,18 @@
 <template>
   <div class="pseudo-code-container">
-    <div class="checking">Let's Go !</div>
+    <div class="checking">Let's Go!</div>
     <div class="pseudo-code">
-      <p class="indent-0">Lakukan</p>
+      <p class="indent-0">Do</p>
       <p class="indent-1">swapped = false</p>
       <p class="indent-1">
-        untuk setiap elemen i = 0 sampai dengan (panjang array - 2) lakukan
+        For each element i = 0 to (array length - 2) do
       </p>
       <p class="indent-2">
-        jika array ke i &#62; array ke (i + 1)
+        If array[i] > array[i + 1]
       </p>
-      <p class="indent-3">Tukar elemen(i dan i + 1)</p>
+      <p class="indent-3">Swap elements[i] and elements[i + 1]</p>
       <p class="indent-3">swapped = true</p>
-      <p class="indent-0">Selama swapped = true</p>
+      <p class="indent-0">While swapped = true</p>
     </div>
   </div>
 </template>

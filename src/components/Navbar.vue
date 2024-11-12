@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar">
     <div class="select-algo select">
-      <span class="tool-tip">Algoritma</span>
+      <span class="tool-tip">Algorithm</span>
       <div class="box btn-style" @click="openAlgoList">
         <p>{{ selectAlgo }}</p>
         <div class="icon">
@@ -15,14 +15,14 @@
       </ul>
     </div>
     <button class="btn-style visualize-btn" @click="Visualize">
-      Visualisasi
+      Visualize
     </button>
     <button class="btn-style randomize-btn" @click="randomizeArray">
-      Buat Array Baru
+      Create New Array
     </button>
 
     <div class="select-speed select">
-      <span class="tool-tip">Kecepatan animasi</span>
+      <span class="tool-tip">Animation Speed</span>
       <div class="box btn-style" @click="openSpeedList">
         <p>{{ selectedSpeed }}</p>
         <div class="icon">
@@ -30,9 +30,9 @@
         </div>
       </div>
       <ul class="ul-list" v-if="isShowingSpeedList">
-        <li @click="changeSelectedSpeed('Lambat')">Lambat</li>
-        <li @click="changeSelectedSpeed('Sedang')">Sedang</li>
-        <li @click="changeSelectedSpeed('Cepat')">Cepat</li>
+        <li @click="changeSelectedSpeed('Slow')">Slow</li>
+        <li @click="changeSelectedSpeed('Medium')">Medium</li>
+        <li @click="changeSelectedSpeed('Fast')">Fast</li>
       </ul>
     </div>
     <div class="theme-toggler">
@@ -57,7 +57,7 @@ export default {
     return {
       selectedAlgorithm: "Selection",
       isShowingAlgoList: false,
-      selectedSpeed: "Cepat",
+      selectedSpeed: "Fast",
       isShowingSpeedList: false,
       isDarkTheme: true,
     };
@@ -96,7 +96,6 @@ export default {
     },
     changeTheme() {
       let root = document.querySelector(":root");
-      // let rs = getComputedStyle(r);
       if (this.isDarkTheme) {
         root.style.setProperty("--dark", "#eeeeee");
         root.style.setProperty("--white", "#36393e");

@@ -109,15 +109,15 @@ function checkPseudoAnim(data, arrFromNodeList) {
     ".pseudo-code-container .checking"
   );
   if (data.isOutLoop) {
-    pseudoCheckingElm.textContent = `Set swapped  sebagai false`;
+    pseudoCheckingElm.textContent = `Set swapped to false`;
     return;
   }
   if (!data.isSwap) {
-    pseudoCheckingElm.textContent = `Cek apakah nilai ${
+    pseudoCheckingElm.textContent = `Check if the value of ${
       arrFromNodeList[data.leftElm].textContent
     } > ${arrFromNodeList[data.rightElm].textContent}`;
     return;
   } else {
-    pseudoCheckingElm.textContent = `Tukar nilai ${data.leftElm} dan ${data.rightElm} dan set swapped sebagai true`;
+    pseudoCheckingElm.textContent = `Swap values ${data.leftElm} and ${data.rightElm} and set swapped to true`;
   }
 }

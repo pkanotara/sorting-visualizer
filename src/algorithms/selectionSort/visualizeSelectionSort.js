@@ -18,6 +18,7 @@ export function visualizeSelectionSort(
   let sortedColor = "#2a9d8f";
   let unsortedColor = "#da7f4b";
   pseudoSections[0].classList.add("active");
+  
   for (let i = 0; i < sortedArr.length; i++) {
     disableButton(true);
     setTimeout(() => {
@@ -26,6 +27,8 @@ export function visualizeSelectionSort(
       }
       visualizePseudo(sortedArr[i], pseudoSections);
       checkPseudoAnim(sortedArr[i], arrFromNodeList, arrFromNodeList);
+      
+      // Change the background color of the elements being processed
       changeBackgroundColor(
         sortedArr[i].minIndex,
         minElmColor,
@@ -41,9 +44,9 @@ export function visualizeSelectionSort(
         compareElmColor,
         arrFromNodeList
       );
-      if (sortedArr[i].isSwap === true) {
-        // Changing the color-bar of elements which has to be swapped.
 
+      // If there's a swap, change the colors and perform the swap
+      if (sortedArr[i].isSwap === true) {
         changeBackgroundColor(
           sortedArr[i].minIndex,
           sortedColor,
@@ -54,7 +57,6 @@ export function visualizeSelectionSort(
           sortedColor,
           arrFromNodeList
         );
-        // Actually swapping the elements (heights).
         swapBars(
           sortedArr[i].currElm,
           sortedArr[i].compareElm,
@@ -65,15 +67,16 @@ export function visualizeSelectionSort(
 
     setTimeout(() => {
       visualizePseudo(sortedArr[i], pseudoSections);
+      
+      // Final element that has reached its sorted position
       if (sortedArr[i].isFinalElm === true) {
-        // Changing the color-bar of finalElement index which has taken its final sorted position.
         changeBackgroundColor(
           sortedArr[i].finalElm,
           sortedColor,
           arrFromNodeList
         );
       } else {
-        // Changing the color-bar of elements which has not taken its final sorted position yet.
+        // Elements that are not yet sorted
         changeBackgroundColor(
           sortedArr[i].compareElm,
           unsortedColor,
@@ -85,6 +88,7 @@ export function visualizeSelectionSort(
           arrFromNodeList
         );
       }
+      
       if (i === sortedArr.length - 1) {
         removePreviousActivePseudo();
         const pseudoCheckingElm = document.querySelector(
@@ -106,6 +110,7 @@ function removePreviousActivePseudo() {
 function visualizePseudo(data, pseudoSections) {
   removePreviousActivePseudo();
   pseudoSections[1].classList.add("active");
+  
   if (data.isOutJLoop) {
     removePreviousActivePseudo();
     pseudoSections[1].classList.add("active");
@@ -135,28 +140,29 @@ function checkPseudoAnim(data, arrFromNodeList) {
   const pseudoCheckingElm = document.querySelector(
     ".pseudo-code-container .checking"
   );
+  
   if (data.isFinalElm) {
     return;
   }
   if (!data.isOutJLoop) {
-    pseudoCheckingElm.textContent = `Cek apakah nilai ${
+    pseudoCheckingElm.textContent = `Check if the value ${
       arrFromNodeList[data.compareElm].textContent
-    } lebih kecil dari minimum (${arrFromNodeList[data.minIndex].textContent})`;
+    } is smaller than the minimum (${arrFromNodeList[data.minIndex].textContent})`;
   }
   if (data.isChangeMin || data.isOutJLoop) {
-    pseudoCheckingElm.textContent = `set nilai ${
+    pseudoCheckingElm.textContent = `Set value ${
       arrFromNodeList[data.minIndex].textContent
-    } sebagai nilai minimum`;
+    } as the minimum value`;
   }
 
   if (data.isSwap) {
-    pseudoCheckingElm.textContent = `tukar nilai ${
+    pseudoCheckingElm.textContent = `Swap values ${
       arrFromNodeList[data.compareElm].textContent
-    } dan ${arrFromNodeList[data.minIndex].textContent}`;
+    } and ${arrFromNodeList[data.minIndex].textContent}`;
   }
   if (data.isCompareIandMin) {
-    pseudoCheckingElm.textContent = `cek apakah nilai ${
+    pseudoCheckingElm.textContent = `Check if values ${
       arrFromNodeList[data.compareElm].textContent
-    } dan ${arrFromNodeList[data.minIndex].textContent} berbeda`;
+    } and ${arrFromNodeList[data.minIndex].textContent} are different`;
   }
 }

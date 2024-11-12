@@ -25,25 +25,25 @@ export default {
         {
           name: "selection",
           infoList: [
-            "Selection sort merupakan salah satu teknik sorting yang paling lambat",
-            "Selection sort memiliki kompleksitas waktu O(n^2) dalam segala kasus",
-            "Hal pertama yang dilakukan selection sort adalah mencari nilai minimum dari bagian yang belum disortir lalu menukarnya dengan data pertama dari bagian yang belum disortir",
+            "Selection sort is one of the slowest sorting techniques",
+            "Selection sort has a time complexity of O(n^2) in all cases",
+            "The first step of selection sort is to find the minimum value from the unsorted part and swap it with the first element of the unsorted part",
           ],
         },
         {
           name: "insertion",
           infoList: [
-            "Insertion sort cukup baik digunakan pada data dengan skala kecil dan ketika data yang digunakan kebanyakan sudah terurut",
-            "Insertion sort memiliki komplesitas waktu O(n^2) dalam kasus terburuk dan O(n) dalam kasus terbaik",
-            "Ide dari insertion sort adalah seperti mengurutkan kartu, ambil satu data lalu bandingkan dengan data sebelumnya sampai data yang diambil lebih besar dari data sebelumnya. Lakukan hal tersebut pada setiap data pada array",
+            "Insertion sort works well for small datasets and when the data is mostly already sorted",
+            "Insertion sort has a time complexity of O(n^2) in the worst case and O(n) in the best case",
+            "The idea of insertion sort is like sorting playing cards, take one element and compare it with the previous one until the taken element is greater than the previous one. Do this for every element in the array",
           ],
         },
         {
           name: "bubble",
           infoList: [
-            "Bubble sort memiliki beberapa versi yang berbeda , namun idenya sama.",
-            "Versi bubble sort yang paling lambat memiliki kompleksitas waktu O(n^2) dalam setiap kasusnya. Namun ada versi lebih baik yang membuat algoritma ini memiliki kompleksitas waktu O(n) dalam kasus terbaik",
-            "Bubble sort mengurutkan data dengan cara membandingkan data dengan data setelahnya secara terus menerus sampai di satu iterasi dimana tidak terjadi perubahan",
+            "Bubble sort has several different versions, but the idea is the same.",
+            "The slowest version of bubble sort has a time complexity of O(n^2) in all cases. However, there is a better version that reduces the time complexity to O(n) in the best case",
+            "Bubble sort sorts data by continuously comparing each element with the next one until an iteration where no changes occur",
           ],
         },
       ],
